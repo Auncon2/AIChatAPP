@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+}
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Custom scrollbar for Chrome and WebKit-based browsers */
+::-webkit-scrollbar {
+  width: 17px; /* Adjust scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #01abbb;
+  border-radius: 10px;
+  border: 3px solid #f0f0f0;
+  height: 5px;
+}
+
+/* Optional: Customize scrollbar for hover state */
+/* ::-webkit-scrollbar-thumb:hover {
+  background-color: #5b21b6; 
+} */
+
+/* .................Light and Dark mode switch.......................... */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  /* width: 60px;
+  height: 30px; */
+  width: 67px;
+  height: 35px;
+  /* background-color: #473d6d; */
+  background-image: url("/Theme/nightsky.avif");
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  /* width: 26px;
+  height: 26px; */
+  width: 31px;
+  height: 31px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 2px;
+  /* left: 2px; */
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 16px;
+}
+
+.moon {
+  left: 10px;
+  color: rgb(102, 154, 199);
+}
+
+.sun {
+  right: 10px;
+  color: rgb(194, 194, 36);
+}
+/* input[type="checkbox"]:checked + .switch .slider {
+  background-color: rgb(247, 247, 7);
+} */
+
+/* input[type="checkbox"]:checked + .switch .sun {
+  opacity: 1; 
+} */
+
+input[type="checkbox"]:checked + .switch .slider {
+  transform: translateX(30px);
+}
+
+input[type="checkbox"]:checked + .switch {
+  background-image: url("/Theme/daysky.jpg");
+}
+
+.bg-light .bg-default-200 {
+  --tw-bg-opacity: 1;
+  /* background-color: hsl(var(--nextui-default-200) / var(--nextui-default-200-opacity, var(--tw-bg-opacity))); */
+  background-image: url("/Theme/daysky.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-dark .bg-default-200 {
+  --tw-bg-opacity: 1;
+  /* background-color: hsl(var(--nextui-default-200) / var(--nextui-default-200-opacity, var(--tw-bg-opacity))); */
+  background-image: url("/Theme/nightsky.avif");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-light .bg-white {
+  background: linear-gradient(
+    to bottom,
+    #ffeb3b,
+    #ff9800
+  ); /* Yellow to Orange gradient */
+}
+
+.bg-dark .bg-white {
+  /* background-image: url("/Theme/moon.webp");
+  background-size: cover;
+  background-position: center; */
+
+  background: linear-gradient(to bottom, #a8a8a8, #a8a8a8, #303030);
+}
