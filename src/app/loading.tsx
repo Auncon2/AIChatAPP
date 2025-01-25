@@ -1,6 +1,5 @@
 import Loading from "@/components/Loading/Loading";
 import React from "react";
-import { RiLoaderLine } from "react-icons/ri";
 
 const loading = () => {
   return (
